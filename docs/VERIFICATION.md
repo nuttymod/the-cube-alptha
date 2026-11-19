@@ -14,9 +14,17 @@ Local checks on November 18, 2026:
   copy; the normal build restores the SDK's current reference packs online.
 
 The local workspace denies network listeners, including loopback sockets.
-Live Node/Go HTTP tests and the complete Aspire connection therefore require
-the Windows/Linux GitHub Actions jobs. Consult the workflow status and artifacts
-for their actual results; the local game smoke test does not prove connectivity.
+The [Windows and Linux GitHub Actions run](https://github.com/nuttymod/the-cube-alptha/actions/runs/44435861984)
+passed on November 19, 2026 UTC (November 18 in Toronto), covering:
+
+- All package integrity and connection failure tests.
+- Real game, Root, Root Mode, Client, Loader, title and optimizer checks.
+- First-run Python environment creation and dependency installation.
+- Node bridge and Go cache HTTP tests.
+- The live Aspire host and a unique Node-to-Go cache round trip.
+- Shutdown and release of all five service ports.
+
+The run's artifacts contain the actual game screenshots and connection logs.
 
 The first-run runtime downloader requires access to official distribution sites.
 The automatic runtime download paths and macOS launch have not been exercised

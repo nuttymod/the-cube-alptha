@@ -3,7 +3,7 @@
 A separate modded edition of The Cube with NuttyMod Client, CPE settings,
 NuttyMod Loader, built-in game-level Root and a live connection screen.
 
-The connection screen starts **Node.js → .NET Aspire → Go**, verifies the
+The connection screen starts **Node.js and Go through .NET Aspire**, verifies the
 services and a Node-to-Go cache round trip, installs the bundled NuttyMod
 packages and Python dependencies, then opens the game. It shows real setup
 results and stops with a readable error if a required step fails.
