@@ -1,0 +1,61 @@
+name: Verify The Cube Alptha
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      PYGAME_HIDE_SUPPORT_PROMPT: '1'
+      SDL_VIDEODRIVER: dummy
+      SDL_AUDIODRIVER: dummy
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_ROLL_FORWARD: Major
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.x'
+          cache: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: python -m pip install --only-binary=:all: -r requirements.txt
+      - name: Package integrity and connection failure tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Real Root, Client, Loader and physics smoke test
+        run: python tests/smoke_game.py
+      - name: First-run Python dependency installation
+        run: python -c "from pathlib import Path; from alptha.launcher import Launcher; print(Launcher(Path.cwd()).prepare_python())"
+      - name: Node bridge tests
+        run: node --test game/cpe/node-bridge/test/server.test.js
+      - name: Go cache tests
+        working-directory: game/cpe/go-cache
+        run: go test ./...
+      - name: Live Aspire, Node and Go connection
+        run: python bootstrap.py --headless --connection-test
+      - name: Confirm services shut down
+        run: python tests/check_shutdown.py
+      - name: Upload verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Alptha-verification-${{ matrix.os }}
+          path: |
+            docs/*.png
+            docs/game-verification.json
+            .runtime/logs/

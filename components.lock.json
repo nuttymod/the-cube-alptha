@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "name": "The Cube Alptha",
+  "version": "0.1.0-alpha.1",
+  "game": {
+    "version": "6.4.3-nightly.2",
+    "channel": "nightly",
+    "repository": "nuttyinc578/the-cube",
+    "commit": "63a9369a5bf93db6a091453b08757997f7018511"
+  },
+  "loader": {
+    "version": "1.4.5",
+    "beta_available": "1.5.0-beta",
+    "source": "game/addons/nuttymod/nuttymod_loader.py",
+    "repository": "nuttyinc578/the-cube"
+  },
+  "client": {
+    "version": "1.0.2",
+    "repository": "nuttyinc578/nuttymod-client-for-the-cube-beta",
+    "commit": "3d93040c29907e0218a8ce682850f4d0ac48f53f"
+  },
+  "root": {
+    "version": "1.0.0",
+    "mode": "1",
+    "library": "1.2",
+    "repository": "nuttyinc578/CPE-flashing-tool",
+    "release": "v1.2.5"
+  },
+  "packages": {
+    "NuttyMod-Root-1.0.0-Packages.zip": {
+      "sha256": "4fa155791c0c4b17569579e6dcf2e8ac8dd476cd9f55b02b1d868e448c13244a",
+      "url": "https://github.com/nuttyinc578/CPE-flashing-tool/releases/download/v1.2.5/NuttyMod-Root-1.0.0-Packages.zip"
+    },
+    "NuttyMod-Client-1.0.2.tar": {
+      "sha256": "55fcd4f6ae6667c60e902736e1e23f6b3974e414b5a55a9183775b5f31b841b5",
+      "url": "https://raw.githubusercontent.com/nuttyinc578/nuttymod-client-for-the-cube-beta/3d93040c29907e0218a8ce682850f4d0ac48f53f/downloads/NuttyMod-Client-1.0.2.tar"
+    }
+  }
+}

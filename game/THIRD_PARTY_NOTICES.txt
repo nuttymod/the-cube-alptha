@@ -1,0 +1,35 @@
+THE CUBE BETA HALLOWEEN UPDATE
+THIRD-PARTY NOTICES
+
+6.4.2 nightly uses pygame-ce 2.5.8 (LGPL-2.1-or-later), Pymunk 7.3.1
+(MIT), and Python 3.15.2 (PSF License). Original library licences are bundled
+by the packager. pygame-ce is a community-maintained implementation of the
+pygame API; its code is not covered by this game's MIT License.
+Project/source: https://github.com/pygame-community/pygame-ce
+Pymunk source: https://github.com/viblo/pymunk
+Python source: https://www.python.org/downloads/release/python-3152/
+
+Music: "Halloween Music"
+Artist: Sound4Stock
+Source: https://pixabay.com/music/happy-childrens-tunes-halloween-music-609427/
+Licence: Pixabay Content License
+Licence information: https://pixabay.com/service/license-summary/
+Added: October 2, 2026
+
+The Halloween track is downloaded from its official Pixabay page on first
+launch and is used only as part of The Cube Beta experience. It is third-party
+copyrighted content, not part of the MIT-licensed source code, and may not be
+redistributed as a standalone music file.
+
+Fallback Fall Edition music
+
+Music: "Autumn Leaves"
+Artist: LofCosmos
+Source: https://pixabay.com/music/beats-autumn-leaves-157898/
+Licence: Pixabay Content License
+Licence information: https://pixabay.com/service/license-summary/
+Downloaded: August 25, 2026
+
+This music is third-party copyrighted content licensed for use under the
+Pixabay Content License. It is not covered by The Cube Beta's MIT Licence and
+must not be distributed as a standalone music file.

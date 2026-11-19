@@ -1,0 +1,11 @@
+{
+  "frames": 12,
+  "real_root_packages": true,
+  "root_mode_library": "1.2",
+  "client": "1.0.2",
+  "loader": "1.4.5",
+  "custom_title": true,
+  "optimizer": true,
+  "physics_restored": true,
+  "network_used": false
+}
