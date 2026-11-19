@@ -76,3 +76,4 @@ with tempfile.TemporaryDirectory(prefix='alptha-game-') as folder:
               'optimizer': True, 'physics_restored': True, 'network_used': False}
     (output/'game-verification.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report, indent=2))
+    os.chdir(ROOT)  # Windows cannot delete the process's current directory.
